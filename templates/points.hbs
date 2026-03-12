@@ -1,0 +1,14 @@
+<div class="villain-points-container" data-action="onClick">
+    <div class="title">{{localize "PF2E-VILLAIN-POINTS.VillainPoints"}}</div>
+    <div class="points">
+        {{#with villainPoints as |vp|}}
+            {{#times vp.max as |p|}}
+                {{#if (gt vp.value p)}}
+                    <i class="fa-solid fa-eye-evil"></i>
+                {{else}}
+                    <i class="fa-thin fa-eye-evil"></i>
+                {{/if}}
+            {{/times}}
+        {{/with}}
+    </div>
+</div>

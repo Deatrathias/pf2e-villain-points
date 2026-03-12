@@ -1,0 +1,16 @@
+{
+	"PF2E-VILLAIN-POINTS": {
+		"VillainPoints": "Villain Points",
+		"RerollMenu": {
+			"VillainPoint": "Reroll using a Villain Point",
+			"MessageVillainPoints": "Rerolled using a Villain Point",
+			"WarnNoVillainPoint": "You have no villain point."
+		},
+		"Settings": {
+			"VillainPointsMaximum": "Villain Points Maximum",
+			"VillainPointsMaximumHint": "The maximum amount of villain points. Set to negative for no limit.",
+			"PlayerVisible": "Visible to Players",
+			"PlayerVisibleHint": "Can players see the amount of villain points."
+		}
+	}
+}

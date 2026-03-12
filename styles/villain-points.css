@@ -1,0 +1,20 @@
+
+#villain-points-window .villain-points-container {
+	pointer-events: all;
+	width: 200px;
+	background: var(--color-cool-5-75);
+	border: 1px solid var(--color-cool-4);
+	border-radius: 8px;
+	padding: 6px 8px;
+	cursor: pointer;
+}
+
+#villain-points-window .villain-points-container .title {
+	font-size: 14px;
+	margin-bottom: 4px;
+}
+
+#villain-points-window .villain-points-container .points {
+	font-size: 16px;
+	min-height: 20px;
+}

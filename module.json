@@ -1,0 +1,61 @@
+{
+	"id": "pf2e-villain-points",
+	"title": "PF2e Villain Points",
+	"version": "#{VERSION}#",
+	"compatibility": {
+		"minimum": "13",
+		"verified": "13.351"
+	},
+	"authors": [
+		{
+			"name": "Deatrathias",
+			"flags": {
+			}
+		}
+	],
+	"url": "#{URL}#",
+	"readme": "https://github.com/Deatrathias/pf2e-villain-points/blob/main/README.md",
+	"license": "https://github.com/Deatrathias/pf2e-villain-points/blob/main/LICENSE",
+	"manifest": "#{MANIFEST}#",
+	"download": "#{DOWNLOAD}#",
+	"relationships": {
+		"systems": [
+			{
+				"id": "pf2e",
+				"type": "system",
+				"compatibility": {}
+			},
+			{
+				"id": "sf2e",
+				"type": "system",
+				"compatibility": {}
+			}
+		],
+		"requires": [
+			{
+				"id": "lib-wrapper",
+				"type": "module",
+				"compatibility": {
+					"minimum": "1.13.4.0",
+					"verified": "1.13.4.0"
+				}
+			}
+		]
+	},
+	"languages": [
+		{
+			"lang": "en",
+			"path": "lang/en.json",
+			"name": "en",
+			"flags": {
+			}
+		}
+	],
+	"description": "Add Villain points that the GM can use to reroll any roll.",
+	"esmodules": [
+		"scripts/main.js"
+	],
+	"styles": [
+		"styles/villain-points.css"
+	]
+}
