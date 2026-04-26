@@ -32,7 +32,7 @@ export class VillainPointsWindow extends foundry.applications.api.HandlebarsAppl
         const max = getMaxVillainPoints();
 
         return {
-            villainPoints: { value, max: max >= 0 ? max : value }
+            villainPoints: { value, max: max !== null ? max : value }
         };
     }
 

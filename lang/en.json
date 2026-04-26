@@ -8,7 +8,7 @@
 		},
 		"Settings": {
 			"VillainPointsMaximum": "Villain Points Maximum",
-			"VillainPointsMaximumHint": "The maximum amount of villain points. Set to negative for no limit.",
+			"VillainPointsMaximumHint": "The maximum amount of villain points. Set empty for no limit.",
 			"PlayerVisible": "Visible to Players",
 			"PlayerVisibleHint": "Can players see the amount of villain points."
 		}

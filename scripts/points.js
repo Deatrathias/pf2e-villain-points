@@ -20,7 +20,7 @@ export function getMaxVillainPoints() {
 
 export async function addVillainPoints(count = 1) {
 	let max = getMaxVillainPoints();
-	if (max < 0)
+	if (max === null)
 		max = Infinity;
 	const points = Math.clamp(getVillainPoints() + count, 0, max);
 	return await game.settings.set(MODULE_NAME, SETTINGS.VILLAIN_POINTS_VALUE, points);
@@ -29,10 +29,17 @@ export async function addVillainPoints(count = 1) {
 export function initPoints() {
 	game.settings.register(MODULE_NAME, SETTINGS.VILLAIN_POINTS_MAX, {
 		scope: "world",
-		type: Number,
+		type: new foundry.data.fields.NumberField({ min: 0, nullable: true }),
 		default: 3,
 		config: true,
-		onChange: (args) => Hooks.callAll(HOOK_VILLAIN_POINTS_CHANGED, args[0]),
+		onChange: (value) => {
+			const points = game.settings.get(MODULE_NAME, SETTINGS.VILLAIN_POINTS_VALUE);
+			if (value !== null && points > value) 
+				game.settings.set(MODULE_NAME, SETTINGS.VILLAIN_POINTS_VALUE, value);
+			else
+				Hooks.callAll(HOOK_VILLAIN_POINTS_CHANGED, points);
+
+		},
 		name: `${LOCALE_ROOT}.Settings.VillainPointsMaximum`,
 		hint: `${LOCALE_ROOT}.Settings.VillainPointsMaximumHint`
 	});
@@ -40,7 +47,7 @@ export function initPoints() {
 		scope: "world",
 		type: Number,
 		default: 0,
-		onChange: (args) => Hooks.callAll(HOOK_VILLAIN_POINTS_CHANGED, args[0])
+		onChange: (value) => Hooks.callAll(HOOK_VILLAIN_POINTS_CHANGED, value)
 	});
 	game.settings.register(MODULE_NAME, SETTINGS.PLAYER_VISIBLE, {
 		scope: "world",
