@@ -39,7 +39,7 @@ async function alterMessageFlavor(message, data, options, userId) {
 
 function entryContextOptionsWrapper(wrapped) {
 	let options = wrapped();
-	const rerollNew = options.findIndex(option => option.name === "PF2E.RerollMenu.KeepNew");
+	const rerollNew = options.findIndex(option => option.name === "PF2E.RerollMenu.KeepNew" || option.label === "PF2E.RerollMenu.KeepNew");
 	if (rerollNew < 0) {
 		console.log("Reroll New not found");
 		return options;
